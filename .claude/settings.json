@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(node check-images-now.mjs)",
+      "Bash(node -e ' *)",
+      "Bash(node check-alpha.mjs)",
+      "Bash(mv \"bodafoto1.png\" \"boda-01.png\")",
+      "Bash(mv \"bodafoto2.png\" \"boda-02.png\")",
+      "Bash(mv \"bodafoto3.png\" \"boda-03.png\")",
+      "Bash(mv \"bodafoto4.png\" \"boda-04.png\")",
+      "Bash(mv \"bodafoto5.png\" \"boda-05.png\")",
+      "Bash(mv \"arreglosfoto1.png\" \"ramo-arreglo-01.png\")",
+      "Bash(mv \"arreglofoto2.png\" \"ramo-arreglo-02.png\")",
+      "Bash(mv \"arreglofoto3.png\" \"ramo-arreglo-03.png\")",
+      "Bash(mv \"arreglofoto4.png\" \"ramo-arreglo-04.png\")",
+      "Bash(mv \"arreglo foto 5.png\" \"ramo-arreglo-05.png\")",
+      "Bash(powershell -Command \"Stop-Process -Id 18132 -Force\")",
+      "Bash(node check-gallery-photos.mjs)"
+    ]
+  }
+}

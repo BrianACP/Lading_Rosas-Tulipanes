@@ -3,7 +3,7 @@
  * @property {string} numero
  * @property {string} titulo
  * @property {string} descripcion
- * @property {string} icono - contenido interno de un <svg> (paths/shapes, sin la etiqueta envolvente)
+ * @property {string} icono - 
  */
 
 /** @type {Service[]} */
