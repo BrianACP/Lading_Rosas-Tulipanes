@@ -19,6 +19,11 @@
   align-items: center;
   justify-content: space-between;
   padding-block: var(--space-2);
+  transition: padding-block var(--duration-base) var(--ease-brand);
+}
+
+.nav.is-scrolled .nav__inner {
+  padding-block: var(--space-1);
 }
 
 .nav__brand {

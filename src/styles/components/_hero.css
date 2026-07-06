@@ -1,9 +1,9 @@
 .hero {
-  min-height: 100svh;
+  min-height: max(100svh, 640px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(120% 100% at 50% 0%, var(--verde-bosque) 0%, var(--verde-profundo) 100%);
+  background: linear-gradient(135deg, var(--verde-bosque) 0%, var(--verde-profundo) 100%);
   color: var(--crema);
   overflow: hidden;
 }
@@ -30,6 +30,11 @@
   margin-top: var(--space-3);
   max-width: 20ch;
   color: var(--crema);
+}
+
+.hero__title em {
+  color: var(--dorado);
+  font-style: italic;
 }
 
 .hero__subtitle {
@@ -64,6 +69,22 @@
   height: 48px;
   background: linear-gradient(to bottom, var(--dorado), transparent);
   transform-origin: top;
+  animation: hero-scroll-fill 2s var(--ease-brand) infinite;
+}
+
+@keyframes hero-scroll-fill {
+  0% {
+    transform: scaleY(0.25);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.25);
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 880px) {
