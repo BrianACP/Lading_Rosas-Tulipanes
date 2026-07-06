@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosas &amp; Tulipanes — Florería en Mérida, Yucatán</title>
+    <meta
+      name="description"
+      content="Florería en Mérida, Yucatán especializada en bodas, eventos y ramos personalizados, con flor fresca y entrega el mismo día."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav" data-nav>
+      <div class="container nav__inner">
+        <a class="nav__brand" href="#inicio">
+          <span class="nav__mark">
+            <img data-mark="light" src="./src/assets/images/logo/logo-mark-light.svg" alt="" aria-hidden="true" />
+            <img data-mark="dark" src="./src/assets/images/logo/logo-mark.svg" alt="" aria-hidden="true" />
+          </span>
+          <span>Rosas &amp; Tulipanes</span>
+        </a>
+
+        <div class="nav__links">
+          <a class="nav__link" href="#nosotros">Nosotros</a>
+          <a class="nav__link" href="#servicios">Servicios</a>
+          <a class="nav__link" href="#galeria">Galería</a>
+          <a class="nav__link" href="#testimonios">Testimonios</a>
+        </div>
+
+        <div class="nav__actions">
+          <a class="btn btn--ghost nav__cta" href="#contacto">Contáctanos</a>
+          <button class="nav__toggle" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav__mobile-panel" data-nav-mobile>
+        <a class="nav__link" href="#nosotros">Nosotros</a>
+        <a class="nav__link" href="#servicios">Servicios</a>
+        <a class="nav__link" href="#galeria">Galería</a>
+        <a class="nav__link" href="#testimonios">Testimonios</a>
+        <a class="btn btn--primary" href="#contacto">Contáctanos</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="inicio" data-hero>
+        <div class="container hero__content">
+          <img
+            class="hero__logo"
+            data-hero-logo
+            src="./src/assets/images/logo/logo.svg"
+            alt="Rosas &amp; Tulipanes"
+          />
+          <p class="eyebrow hero__eyebrow" data-hero-eyebrow>Florería en Mérida, Yucatán</p>
+          <h1 class="hero__title" data-hero-title>Flores que cuentan tu historia, arreglo a arreglo</h1>
+          <p class="hero__subtitle" data-hero-subtitle>
+            Diseño floral para bodas, eventos y regalos personalizados, con flor fresca y entrega el mismo día en
+            Mérida.
+          </p>
+          <a class="btn btn--primary hero__cta" data-hero-cta href="#servicios">Ver servicios</a>
+        </div>
+        <button class="hero__scroll" data-hero-scroll aria-label="Desplázate para ver más contenido">
+          <span data-hero-scroll-line class="hero__scroll-line"></span>
+          Desliza
+        </button>
+      </section>
+
+      <div class="divider" data-divider aria-hidden="true">
+        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
+          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+        </svg>
+      </div>
+
+      <section class="about" id="nosotros">
+        <div class="container about__grid">
+          <div class="about__visual" data-reveal>
+            <div class="about__visual-gradient">
+              <p class="about__visual-card">15 años creando momentos florales en Mérida</p>
+            </div>
+          </div>
+          <div class="about__content">
+            <p class="eyebrow" data-reveal>Sobre nosotros</p>
+            <h2 data-reveal>Una florería de barrio con oficio de taller</h2>
+            <p data-reveal>
+              Somos un equipo meridano dedicado al diseño floral desde hace más de una década. Empezamos como un
+              pequeño taller familiar y hoy acompañamos bodas, eventos y regalos en toda la ciudad, siempre a mano y
+              con flor fresca.
+            </p>
+            <p data-reveal>
+              Trabajamos con proveedores locales cuando es posible y cuidamos cada arreglo como si fuera para
+              nuestra propia celebración: sin prisa, sin fórmulas repetidas.
+            </p>
+            <div class="about__stats">
+              <div class="stat" data-reveal>
+                <span class="stat__number" data-count-to="2500" data-count-suffix="+">0</span>
+                <span class="stat__label">Arreglos entregados</span>
+              </div>
+              <div class="stat" data-reveal>
+                <span class="stat__number" data-count-to="180" data-count-suffix="+">0</span>
+                <span class="stat__label">Bodas realizadas</span>
+              </div>
+              <div class="stat" data-reveal>
+                <span class="stat__number" data-count-to="15">0</span>
+                <span class="stat__label">Años de experiencia</span>
+              </div>
+              <div class="stat" data-reveal>
+                <span class="stat__number" data-count-to="98" data-count-suffix="%">0</span>
+                <span class="stat__label">Clientes satisfechos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" data-divider aria-hidden="true">
+        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
+          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+        </svg>
+      </div>
+
+      <section class="services" id="servicios">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>Lo que hacemos</p>
+            <h2 data-reveal>Servicios</h2>
+          </div>
+          <div class="services__grid" data-services-grid></div>
+        </div>
+      </section>
+
+      <div class="divider" data-divider aria-hidden="true">
+        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
+          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+        </svg>
+      </div>
+
+      <section class="gallery" id="galeria">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>Nuestro trabajo</p>
+            <h2 data-reveal>Galería</h2>
+            <p data-reveal>
+              Una muestra de bodas, eventos y ramos que hemos entregado en Mérida y alrededores.
+            </p>
+          </div>
+          <div class="gallery__grid" data-gallery-grid></div>
+        </div>
+      </section>
+
+      <div class="divider divider--on-dark" data-divider aria-hidden="true">
+        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
+          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+        </svg>
+      </div>
+
+      <section class="testimonials" id="testimonios">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>Testimonios</p>
+            <h2 data-reveal>Lo que dicen quienes ya confiaron en nosotros</h2>
+          </div>
+          <div class="testimonial-carousel" data-testimonial-carousel>
+            <div class="testimonial-carousel__track" data-testimonial-track></div>
+            <div class="testimonial-carousel__dots" data-testimonial-dots></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <span class="footer__brand-mark">
+            <img src="./src/assets/images/logo/logo-mark-light.svg" alt="" aria-hidden="true" />
+            <span>Rosas &amp; Tulipanes</span>
+          </span>
+          <p class="footer__tagline">
+            Diseño floral en Mérida, Yucatán, para bodas, eventos y regalos personalizados.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="tel:+529991234567">999 123 4567</a></li>
+            <li><a href="mailto:hola@rosasytulipanes.mx">hola@rosasytulipanes.mx</a></li>
+            <li>Calle 60 x 35, Centro, Mérida, Yuc.</li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3>Horario</h3>
+          <ul>
+            <li>Lunes a viernes: 9:00–19:00</li>
+            <li>Sábados: 9:00–15:00</li>
+            <li>Domingos: cerrado</li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3>Síguenos</h3>
+          <div class="footer__socials">
+            <a class="footer__social-link" href="#" aria-label="Instagram de Rosas y Tulipanes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a class="footer__social-link" href="#" aria-label="Facebook de Rosas y Tulipanes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M14 8.5h-1.5c-.8 0-1.5.7-1.5 1.5v2h3l-.4 2.5h-2.6V21" />
+              </svg>
+            </a>
+            <a class="footer__social-link" href="#" aria-label="WhatsApp de Rosas y Tulipanes">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21c-1.4 0-2.7-.4-3.9-1.1L4 21l1.2-4c-.8-1.3-1.2-2.7-1.2-4.2C4 7.6 7.6 4 12 4s8 3.6 8 8-3.6 9-8 9Z" />
+                <path
+                  d="M8.7 9.4c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.5.6 1.6.6 1.7.1.1.1.3 0 .4-.1.2-.2.3-.3.4l-.4.4c-.1.1-.2.3-.1.5.2.4.7 1.1 1.5 1.7.9.7 1.6 1 1.9 1.1.2.1.4.1.5-.1l.5-.6c.2-.2.3-.2.5-.1l1.5.7c.2.1.3.2.3.3 0 .5-.2 1-.5 1.3-.4.4-1.2.7-2.3.3-1.2-.4-2.4-1.1-3.4-2.1-.9-.9-1.6-2-2-3-.3-.7-.1-1.4.3-1.8Z"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom container">
+        <p>&copy; 2026 Rosas &amp; Tulipanes. Todos los derechos reservados.</p>
+        <p>Hecho con cariño en Mérida, Yucatán.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

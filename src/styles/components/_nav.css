@@ -1,0 +1,194 @@
+.nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background-color var(--duration-base) var(--ease-brand), box-shadow var(--duration-base) var(--ease-brand);
+}
+
+.nav.is-scrolled {
+  background: rgba(247, 243, 234, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(38, 37, 31, 0.06);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--crema);
+  transition: color var(--duration-base) var(--ease-brand);
+}
+
+.nav.is-scrolled .nav__brand {
+  color: var(--verde-bosque);
+}
+
+.nav__mark {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.nav__mark img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity var(--duration-base) var(--ease-brand);
+}
+
+.nav__mark img[data-mark='light'] {
+  opacity: 1;
+}
+
+.nav__mark img[data-mark='dark'] {
+  opacity: 0;
+}
+
+.nav.is-scrolled .nav__mark img[data-mark='light'] {
+  opacity: 0;
+}
+
+.nav.is-scrolled .nav__mark img[data-mark='dark'] {
+  opacity: 1;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav__link {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--crema);
+  padding-block: var(--space-1);
+  transition: color var(--duration-base) var(--ease-brand);
+}
+
+.nav.is-scrolled .nav__link {
+  color: var(--carbon);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--dorado);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-fast) var(--ease-brand);
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nav.is-scrolled .nav__cta.btn--ghost {
+  color: var(--verde-bosque);
+}
+
+.nav__toggle {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 20px;
+  z-index: 110;
+}
+
+.nav__toggle span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--crema);
+  border-radius: 2px;
+  transition: transform var(--duration-fast) var(--ease-brand), opacity var(--duration-fast) var(--ease-brand), background-color var(--duration-base) var(--ease-brand);
+}
+
+.nav.is-scrolled .nav__toggle span,
+.nav__toggle.is-open span {
+  background: var(--verde-bosque);
+}
+
+.nav__toggle span:nth-child(1) { top: 0; }
+.nav__toggle span:nth-child(2) { top: 9px; }
+.nav__toggle span:nth-child(3) { top: 18px; }
+
+.nav__toggle.is-open span:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+
+.nav__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle.is-open span:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+.nav__mobile-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  background: var(--crema);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity var(--duration-base) var(--ease-brand), transform var(--duration-base) var(--ease-brand), visibility 0s linear var(--duration-base);
+}
+
+.nav__mobile-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity var(--duration-base) var(--ease-brand), transform var(--duration-base) var(--ease-brand), visibility 0s;
+}
+
+.nav__mobile-panel .nav__link {
+  color: var(--carbon);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+@media (max-width: 880px) {
+  .nav__links,
+  .nav__actions .nav__cta {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+}

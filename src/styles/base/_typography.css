@@ -1,0 +1,90 @@
+/*
+ * Fraunces + Jost se cargan vía <link> de Google Fonts en index.html
+ * (con preconnect + font-display: swap), no con @font-face local.
+ * Para un sitio estático de una sola página esto evita mantener los
+ * archivos de fuente, subsetting y licencias a mano, y aprovecha la
+ * caché/CDN de Google entre sitios; display=swap evita el flash de
+ * texto invisible mientras cargan. Si el sitio creciera o necesitara
+ * independizarse de servicios externos, self-host con @font-face sería
+ * la siguiente iteración razonable.
+ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+h4 {
+  font-size: var(--text-lg);
+}
+
+h5,
+h6 {
+  font-size: var(--text-base);
+}
+
+p {
+  color: var(--color-text-suave);
+}
+
+.text-soft {
+  color: var(--carbon-suave);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dorado);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (max-width: 880px) {
+  h1 {
+    font-size: var(--text-3xl);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+  }
+}

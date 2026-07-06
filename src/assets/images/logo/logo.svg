@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 130" role="img" aria-label="Logotipo de Rosas &amp; Tulipanes: flor de tres pétalos sobre una línea ondulada">
+  <g fill="none" stroke="#F7F3EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80,62 C68,50 66,28 80,16 C94,28 92,50 80,62 Z" transform="translate(0,-8)" />
+    <path d="M80,62 C68,50 66,28 80,16 C94,28 92,50 80,62 Z" transform="translate(0,-8) rotate(120 80 54)" />
+    <path d="M80,62 C68,50 66,28 80,16 C94,28 92,50 80,62 Z" transform="translate(0,-8) rotate(240 80 54)" />
+  </g>
+  <circle cx="80" cy="46" r="4" fill="#B99C61" />
+  <path d="M20,100 C36,88 44,112 60,100 C76,88 84,112 100,100 C116,88 124,112 140,100"
+        fill="none" stroke="#B99C61" stroke-width="2.4" stroke-linecap="round" />
+</svg>
