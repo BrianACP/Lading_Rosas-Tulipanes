@@ -8,6 +8,7 @@
 @import 'components/_services.css';
 @import 'components/_gallery.css';
 @import 'components/_testimonials.css';
+@import 'components/_dividers.css';
 @import 'components/_footer.css';
 
 /* Layout compartido */
@@ -63,30 +64,4 @@ section {
 
 .btn--ghost:hover {
   background: rgba(247, 243, 234, 0.1);
-}
-
-/* Divisor de línea ondulada — usado entre secciones por dividers.js */
-.divider {
-  display: flex;
-  justify-content: center;
-  padding-block: var(--space-5);
-  overflow: hidden;
-  color: var(--dorado);
-}
-
-.divider__path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.divider--on-dark {
-  color: var(--rosa-polvo);
-}
-
-@media (max-width: 880px) {
-  .divider {
-    padding-block: var(--space-3);
-  }
 }

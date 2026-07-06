@@ -10,6 +10,7 @@ import { initTestimonials } from './scripts/modules/testimonials.js';
 import { initDividers } from './scripts/modules/dividers.js';
 import { initScrollReveal } from './scripts/modules/scrollReveal.js';
 import { initAboutParallax } from './scripts/modules/parallax.js';
+import { initFooter } from './scripts/modules/footer.js';
 
 initNav();
 initHeroAnimation();
@@ -19,5 +20,6 @@ initTestimonials();
 initDividers();
 initAboutParallax();
 initScrollReveal();
+initFooter();
 
 window.addEventListener('load', () => ScrollTrigger.refresh());

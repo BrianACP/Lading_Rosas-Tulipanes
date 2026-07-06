@@ -5,14 +5,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Anima cada divisor de línea ondulada (motivo de marca) para que se
- * "dibuje a sí mismo" mientras entra al viewport, usando
+ * "dibuje a sí mismo" conforme el usuario hace scroll, usando
  * stroke-dasharray/stroke-dashoffset sobre la longitud real del path.
  */
 export function initDividers() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const paths = document.querySelectorAll('[data-divider] .divider__path');
+  const svgs = document.querySelectorAll('.divider-svg');
 
-  paths.forEach((path) => {
+  svgs.forEach((svg) => {
+    const path = svg.querySelector('path');
+    if (!path) return;
+
     const length = path.getTotalLength();
     path.style.strokeDasharray = `${length}`;
 
@@ -27,10 +30,10 @@ export function initDividers() {
       strokeDashoffset: 0,
       ease: 'none',
       scrollTrigger: {
-        trigger: path.closest('[data-divider]'),
+        trigger: svg,
         start: 'top 85%',
-        end: 'bottom 65%',
-        scrub: 0.6
+        end: 'top 55%',
+        scrub: 1
       }
     });
   });

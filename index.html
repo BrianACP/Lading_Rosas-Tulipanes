@@ -75,9 +75,9 @@
         </button>
       </section>
 
-      <div class="divider" data-divider aria-hidden="true">
-        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
-          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+      <div class="divider">
+        <svg class="divider-svg" viewBox="0 0 180 38">
+          <path d="M2 20 C 40 2, 60 38, 90 20 S 140 2, 178 20"/>
         </svg>
       </div>
 
@@ -122,9 +122,9 @@
         </div>
       </section>
 
-      <div class="divider" data-divider aria-hidden="true">
-        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
-          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+      <div class="divider">
+        <svg class="divider-svg" viewBox="0 0 180 38">
+          <path d="M2 20 C 40 2, 60 38, 90 20 S 140 2, 178 20"/>
         </svg>
       </div>
 
@@ -138,9 +138,9 @@
         </div>
       </section>
 
-      <div class="divider" data-divider aria-hidden="true">
-        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
-          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+      <div class="divider">
+        <svg class="divider-svg" viewBox="0 0 180 38">
+          <path d="M2 20 C 40 2, 60 38, 90 20 S 140 2, 178 20"/>
         </svg>
       </div>
 
@@ -157,9 +157,9 @@
         </div>
       </section>
 
-      <div class="divider divider--on-dark" data-divider aria-hidden="true">
-        <svg viewBox="0 0 400 40" width="400" height="40" preserveAspectRatio="none">
-          <path class="divider__path" d="M0,20 C50,0 100,40 150,20 C200,0 250,40 300,20 C350,0 380,10 400,8" />
+      <div class="divider">
+        <svg class="divider-svg" viewBox="0 0 180 38">
+          <path d="M2 20 C 40 2, 60 38, 90 20 S 140 2, 178 20"/>
         </svg>
       </div>
 
@@ -173,6 +173,12 @@
           <div class="testi-dots" id="testiDots"></div>
         </div>
       </section>
+
+      <div class="divider">
+        <svg class="divider-svg" viewBox="0 0 180 38">
+          <path d="M2 20 C 40 2, 60 38, 90 20 S 140 2, 178 20"/>
+        </svg>
+      </div>
     </main>
 
     <footer class="footer" id="contacto">
@@ -185,28 +191,6 @@
           <p class="footer__tagline">
             Diseño floral en Mérida, Yucatán, para bodas, eventos y regalos personalizados.
           </p>
-        </div>
-
-        <div class="footer__col">
-          <h3>Contacto</h3>
-          <ul>
-            <li><a href="tel:+529991234567">999 123 4567</a></li>
-            <li><a href="mailto:hola@rosasytulipanes.mx">hola@rosasytulipanes.mx</a></li>
-            <li>Calle 60 x 35, Centro, Mérida, Yuc.</li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>Horario</h3>
-          <ul>
-            <li>Lunes a viernes: 9:00–19:00</li>
-            <li>Sábados: 9:00–15:00</li>
-            <li>Domingos: cerrado</li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h3>Síguenos</h3>
           <div class="footer__socials">
             <a class="footer__social-link" href="#" aria-label="Instagram de Rosas y Tulipanes">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -233,10 +217,28 @@
             </a>
           </div>
         </div>
+
+        <div class="footer__col">
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="tel:+529991234567">999 123 4567</a></li>
+            <li><a href="mailto:hola@rosasytulipanes.mx">hola@rosasytulipanes.mx</a></li>
+            <li>Calle 60 x 35, Centro, Mérida, Yuc.</li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3>Horario</h3>
+          <ul>
+            <li>Lunes a viernes: 9:00–19:00</li>
+            <li>Sábados: 9:00–15:00</li>
+            <li>Domingos: cerrado</li>
+          </ul>
+        </div>
       </div>
 
       <div class="footer__bottom container">
-        <p>&copy; 2026 Rosas &amp; Tulipanes. Todos los derechos reservados.</p>
+        <p>&copy; <span id="copyrightYear"></span> Rosas &amp; Tulipanes. Todos los derechos reservados.</p>
         <p>Hecho con cariño en Mérida, Yucatán.</p>
       </div>
     </footer>

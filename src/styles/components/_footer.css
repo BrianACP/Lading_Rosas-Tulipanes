@@ -6,7 +6,7 @@
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr 1fr;
   gap: var(--space-8);
   padding-bottom: var(--space-8);
   border-bottom: 1px solid rgba(247, 243, 234, 0.12);
@@ -15,7 +15,7 @@
 .footer__brand {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
 .footer__brand-mark {
@@ -82,9 +82,8 @@
 }
 
 .footer__social-link:hover {
-  background: var(--dorado);
   border-color: var(--dorado);
-  color: var(--verde-profundo);
+  color: var(--dorado);
 }
 
 .footer__bottom {
@@ -99,10 +98,6 @@
 
 @media (max-width: 880px) {
   .footer__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer__brand {
-    grid-column: span 2;
+    grid-template-columns: 1fr;
   }
 }

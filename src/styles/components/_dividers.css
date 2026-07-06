@@ -1,0 +1,24 @@
+.divider {
+  display: flex;
+  justify-content: center;
+  padding-block: 70px 20px;
+}
+
+.divider-svg {
+  width: 180px;
+  height: 38px;
+  overflow: visible;
+}
+
+.divider-svg path {
+  fill: none;
+  stroke: var(--dorado);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+@media (max-width: 880px) {
+  .divider {
+    padding-block: var(--space-6) var(--space-3);
+  }
+}
