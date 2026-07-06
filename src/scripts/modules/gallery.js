@@ -5,36 +5,40 @@ import { galleryItems } from '../data/gallery.js';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initGallery() {
-  const grid = document.querySelector('[data-gallery-grid]');
+  const grid = document.getElementById('galleryGrid');
   if (!grid) return;
 
   grid.innerHTML = galleryItems
     .map(
       (item) => `
-        <figure class="gallery__item" data-gallery-item>
+        <figure class="gallery-tile ${item.tamano}" data-gallery-tile>
           <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async" />
-          <span class="gallery__tag">${item.category}</span>
         </figure>
       `
     )
     .join('');
 
-  const items = grid.querySelectorAll('[data-gallery-item]');
+  const tiles = grid.querySelectorAll('[data-gallery-tile]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduceMotion) return;
 
-  gsap.set(items, { opacity: 0, y: 24 });
-
-  ScrollTrigger.batch(items, {
-    start: 'top 88%',
-    onEnter: (batch) =>
-      gsap.to(batch, {
+  tiles.forEach((tile, index) => {
+    gsap.fromTo(
+      tile,
+      { opacity: 0, y: 26, scale: 0.96 },
+      {
         opacity: 1,
         y: 0,
-        stagger: 0.08,
+        scale: 1,
         duration: 0.7,
-        ease: 'power2.out'
-      })
+        delay: (index % 6) * 0.06,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: tile,
+          start: 'top 92%'
+        }
+      }
+    );
   });
 }
