@@ -8,6 +8,7 @@ import { initGallery } from './scripts/modules/gallery.js';
 import { initTestimonials } from './scripts/modules/testimonials.js';
 import { initDividers } from './scripts/modules/dividers.js';
 import { initScrollReveal } from './scripts/modules/scrollReveal.js';
+import { initAboutParallax } from './scripts/modules/parallax.js';
 import { services } from './scripts/data/services.js';
 
 const serviceIcons = {
@@ -49,6 +50,7 @@ renderServices();
 initGallery();
 initTestimonials();
 initDividers();
+initAboutParallax();
 initScrollReveal();
 
 window.addEventListener('load', () => ScrollTrigger.refresh());
