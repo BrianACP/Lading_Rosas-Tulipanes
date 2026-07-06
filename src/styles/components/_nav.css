@@ -102,7 +102,8 @@
   transition: transform var(--duration-fast) var(--ease-brand);
 }
 
-.nav__link:hover::after {
+.nav__link:hover::after,
+.nav__link[aria-current='true']::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -135,9 +136,16 @@
   transition: transform var(--duration-fast) var(--ease-brand), opacity var(--duration-fast) var(--ease-brand), background-color var(--duration-base) var(--ease-brand);
 }
 
-.nav.is-scrolled .nav__toggle span,
-.nav__toggle.is-open span {
+.nav.is-scrolled .nav__toggle span {
   background: var(--verde-bosque);
+}
+
+/* El panel mobile tiene fondo oscuro; el ícono debe volver a claro al
+   abrirse sin importar si el nav de fondo estaba en estado "scrolled".
+   Misma especificidad que la regla anterior — gana por ir declarada
+   después. */
+.nav .nav__toggle.is-open span {
+  background: var(--crema);
 }
 
 .nav__toggle span:nth-child(1) { top: 0; }
@@ -167,7 +175,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-5);
-  background: var(--crema);
+  background: linear-gradient(155deg, var(--verde-bosque) 0%, var(--verde-profundo) 100%);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -182,9 +190,14 @@
 }
 
 .nav__mobile-panel .nav__link {
-  color: var(--carbon);
+  color: var(--crema);
   font-family: var(--font-display);
   font-size: var(--text-xl);
+}
+
+.nav__mobile-panel .nav__link:hover,
+.nav__mobile-panel .nav__link:focus-visible {
+  color: var(--dorado);
 }
 
 @media (max-width: 880px) {

@@ -59,20 +59,31 @@
 .testi-dots {
   display: flex;
   justify-content: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
   margin-top: var(--space-8);
 }
 
+/* El botón ocupa un área táctil de 24x24 (mínimo WCAG 2.5.8) aunque el
+   punto visual siga siendo de 7px, dibujado con ::before centrado. */
 .testi-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.testi-dot::before {
+  content: '';
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: rgba(247, 243, 234, 0.4);
-  cursor: pointer;
   transition: background-color var(--duration-fast) var(--ease-brand), transform var(--duration-fast) var(--ease-brand);
 }
 
-.testi-dot.active {
+.testi-dot.active::before {
   background: var(--dorado);
   transform: scale(1.2);
 }

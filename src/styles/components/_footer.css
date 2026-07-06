@@ -38,7 +38,7 @@
   color: rgba(247, 243, 234, 0.6);
 }
 
-.footer h3 {
+.footer h2 {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: 500;
@@ -93,7 +93,13 @@
   gap: var(--space-1);
   padding-block: var(--space-3);
   font-size: var(--text-xs);
-  color: rgba(247, 243, 234, 0.5);
+}
+
+/* El color debe ir en el <p> mismo: la regla global `p { color: ... }`
+   de _typography.css tiene más especificidad que heredar de un ancestro,
+   así que ponerlo solo en .footer__bottom nunca llegaba a aplicarse. */
+.footer__bottom p {
+  color: rgba(247, 243, 234, 0.65);
 }
 
 @media (max-width: 880px) {

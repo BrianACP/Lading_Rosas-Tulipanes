@@ -51,6 +51,15 @@ ol {
   list-style: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--dorado);
+  outline-offset: 3px;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
