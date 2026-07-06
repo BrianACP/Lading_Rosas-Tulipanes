@@ -1,87 +1,84 @@
-.testimonials {
-  padding-block: var(--space-12);
-  background: var(--verde-bosque);
+.testi {
+  padding-block: 110px;
+  background: linear-gradient(155deg, var(--verde-bosque) 0%, var(--verde-profundo) 100%);
   color: var(--crema);
 }
 
-.testimonials .section-head {
+.testi .section-head {
   margin-inline: auto;
   text-align: center;
 }
 
-.testimonials .section-head h2 {
+.testi .section-head h2 {
   color: var(--crema);
 }
 
-.testimonials .eyebrow {
+.testi .eyebrow {
   color: var(--rosa-polvo);
 }
 
-.testimonial-carousel {
-  max-width: 42rem;
+.testi-track {
+  position: relative;
+  max-width: 760px;
+  min-height: 220px;
   margin-inline: auto;
 }
 
-.testimonial-carousel__track {
-  display: grid;
-}
-
-.testimonial-slide {
-  grid-area: 1 / 1;
+.testi-slide {
+  position: absolute;
+  inset: 0;
   text-align: center;
   opacity: 0;
-  visibility: hidden;
   transition: opacity var(--duration-base) var(--ease-brand);
 }
 
-.testimonial-slide.is-active {
+.testi-slide.active {
+  position: relative;
   opacity: 1;
-  visibility: visible;
 }
 
-.testimonial-slide__quote {
+.testi-slide__quote {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-style: italic;
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.75rem);
   line-height: 1.4;
+  color: var(--crema);
 }
 
-.testimonial-slide__author {
+.testi-slide__autor {
   display: block;
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-style: normal;
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--dorado);
 }
 
-.testimonial-slide__role {
-  display: block;
-  margin-top: var(--space-1);
-  font-size: var(--text-xs);
-  color: rgba(247, 243, 234, 0.6);
-}
-
-.testimonial-carousel__dots {
+.testi-dots {
   display: flex;
   justify-content: center;
   gap: var(--space-2);
   margin-top: var(--space-8);
 }
 
-.testimonial-dot {
-  width: 9px;
-  height: 9px;
+.testi-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  border: 1px solid var(--dorado);
+  background: rgba(247, 243, 234, 0.4);
+  cursor: pointer;
   transition: background-color var(--duration-fast) var(--ease-brand), transform var(--duration-fast) var(--ease-brand);
 }
 
-.testimonial-dot.is-active {
+.testi-dot.active {
   background: var(--dorado);
   transform: scale(1.2);
 }
 
 @media (max-width: 880px) {
-  .testimonial-slide__quote {
-    font-size: var(--text-base);
+  .testi {
+    padding-block: var(--space-10);
   }
 }

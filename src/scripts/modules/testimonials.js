@@ -1,22 +1,16 @@
 import { testimonials } from '../data/testimonials.js';
 
 export function initTestimonials() {
-  const root = document.querySelector('[data-testimonial-carousel]');
-  if (!root) return;
-
-  const track = root.querySelector('[data-testimonial-track]');
-  const dotsWrap = root.querySelector('[data-testimonial-dots]');
+  const track = document.getElementById('testiTrack');
+  const dotsWrap = document.getElementById('testiDots');
   if (!track || !dotsWrap) return;
 
   track.innerHTML = testimonials
     .map(
       (item, index) => `
-        <blockquote class="testimonial-slide${index === 0 ? ' is-active' : ''}" data-testimonial-slide>
-          <p class="testimonial-slide__quote">&ldquo;${item.quote}&rdquo;</p>
-          <cite>
-            <span class="testimonial-slide__author">${item.author}</span>
-            <span class="testimonial-slide__role">${item.role}</span>
-          </cite>
+        <blockquote class="testi-slide${index === 0 ? ' active' : ''}" data-testi-slide>
+          <p class="testi-slide__quote">&ldquo;${item.quote}&rdquo;</p>
+          <cite class="testi-slide__autor">${item.autor}</cite>
         </blockquote>
       `
     )
@@ -26,8 +20,8 @@ export function initTestimonials() {
     .map(
       (_, index) => `
         <button
-          class="testimonial-dot${index === 0 ? ' is-active' : ''}"
-          data-testimonial-dot
+          class="testi-dot${index === 0 ? ' active' : ''}"
+          data-testi-dot
           data-index="${index}"
           aria-label="Ver testimonio ${index + 1}"
         ></button>
@@ -35,41 +29,33 @@ export function initTestimonials() {
     )
     .join('');
 
-  const slides = track.querySelectorAll('[data-testimonial-slide]');
-  const dots = dotsWrap.querySelectorAll('[data-testimonial-dot]');
+  const slides = track.querySelectorAll('[data-testi-slide]');
+  const dots = dotsWrap.querySelectorAll('[data-testi-dot]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let current = 0;
   let timer = null;
 
-  const goTo = (index) => {
-    slides[current].classList.remove('is-active');
-    dots[current].classList.remove('is-active');
+  function showTestimonial(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
     current = (index + slides.length) % slides.length;
-    slides[current].classList.add('is-active');
-    dots[current].classList.add('is-active');
-  };
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
 
-  const stopAutoplay = () => {
-    if (timer) window.clearInterval(timer);
-    timer = null;
-  };
-
-  const startAutoplay = () => {
+  function startAutoplay() {
     if (reduceMotion) return;
-    stopAutoplay();
-    timer = window.setInterval(() => goTo(current + 1), 6000);
-  };
+    if (timer) window.clearInterval(timer);
+    timer = window.setInterval(() => showTestimonial(current + 1), 5500);
+  }
 
   dots.forEach((dot) => {
     dot.addEventListener('click', () => {
-      goTo(Number(dot.dataset.index));
+      showTestimonial(Number(dot.dataset.index));
       startAutoplay();
     });
   });
-
-  root.addEventListener('mouseenter', stopAutoplay);
-  root.addEventListener('mouseleave', startAutoplay);
 
   startAutoplay();
 }
