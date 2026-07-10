@@ -3,25 +3,81 @@
   background: var(--color-bg);
 }
 
+/* Menú de filtro por categoría */
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--space-3);
+  row-gap: var(--space-1);
+  margin-bottom: var(--space-6);
+}
+
+.gallery-filter__btn {
+  position: relative;
+  padding: 0.35em 0;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--carbon-suave);
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-brand);
+}
+
+.gallery-filter__btn:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 0.9em;
+  margin-left: var(--space-3);
+  background: var(--line);
+  vertical-align: middle;
+}
+
+.gallery-filter__btn:hover {
+  color: var(--carbon);
+}
+
+.gallery-filter__btn[aria-current='true'] {
+  color: var(--dorado);
+}
+
+.gallery-filter__btn[aria-current='true']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.3em;
+  height: 1px;
+  background: var(--dorado);
+}
+
+/* Masonry real con CSS multi-column */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 120px;
-  grid-auto-flow: dense;
-  gap: 14px;
+  column-count: 4;
+  column-gap: 14px;
 }
 
 .gallery-tile {
-  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  break-inside: avoid;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--crema-2);
 }
 
 .gallery-tile img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform var(--duration-slow) var(--ease-brand);
 }
 
@@ -29,37 +85,18 @@
   transform: scale(1.03);
 }
 
-.gallery-tile.big {
-  grid-column: span 3;
-  grid-row: span 3;
-}
-
-.gallery-tile.med {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.gallery-tile.small {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.gallery-tile.tall {
-  grid-column: span 2;
-  grid-row: span 2;
+.gallery-tile[data-hidden='true'] {
+  display: none;
 }
 
 @media (max-width: 880px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
+}
 
-  .gallery-tile,
-  .gallery-tile.big,
-  .gallery-tile.med,
-  .gallery-tile.small,
-  .gallery-tile.tall {
-    grid-column: span 1;
-    grid-row: span 2;
+@media (max-width: 540px) {
+  .gallery-grid {
+    column-count: 1;
   }
 }

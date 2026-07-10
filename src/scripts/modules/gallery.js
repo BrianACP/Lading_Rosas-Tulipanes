@@ -11,7 +11,7 @@ export function initGallery() {
   grid.innerHTML = galleryItems
     .map(
       (item) => `
-        <figure class="gallery-tile ${item.tamano}" data-gallery-tile>
+        <figure class="gallery-tile" data-gallery-tile data-categoria="${item.categoria}">
           <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async" />
         </figure>
       `
